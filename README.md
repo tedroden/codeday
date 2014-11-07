@@ -5,7 +5,7 @@
 
 The Fancy Hands python SDK lives on github at [github.com/fancyhands/fancyhands-python](https://github.com/fancyhands/fancyhands-python).
 
-You can install it with `pip`, but let's just [download it by hand](https://github.com/fancyhands/fancyhands-python/archive/master.zip): `[http://bit.ly/fh-zip](http://bit.ly/fh-zip)`
+You can install it with `pip`, but let's just [download it by hand](https://github.com/fancyhands/fancyhands-python/archive/master.zip): [http://bit.ly/fh-zip](http://bit.ly/fh-zip)
 
 Unzip and install it:
 
