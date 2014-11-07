@@ -84,5 +84,53 @@ loaded = client.standard_get(key)
 
 ## Call me, maybe?
 
-In this one, we'll have a real live human call us.
+In this one, we'll have a real live human call us. We'll use the `fancyhands.call.Outgoing` endpoint which is specific for phone calls. It's also pretty fast and very cheap!
+
+The hardest part here is that we have to define a script. I'll give you something to copy and paste, but you can always use our [script builder](https://www.fancyhands.com/api/explorer/script/builder) to build one for you.
+
+```python
+from fancyhands import FancyhandsClient
+from datetime import timedelta, datetime
+from credentials import *
+import json
+PHONE = "212-555-1212" # put your phone number here
+
+# copy this conversation: http://bit.ly/fh-convo
+CONVERSATION = {
+  "id": "sample_outgoing",
+  "name": "Sample Outgoing",
+  "version": 1.1,
+  "scripts": [
+    {
+      "id": "finish",
+      "steps": [
+        {
+          "name": "hello",
+          "prompt": "Hello, my name is $assistant_name. Between the following colors, which is your favorite: red, white, or blue?",
+          "note": "This is a sample task, but please do it. Thanks!",
+          "type": "select",
+          "options": [
+            {"name": "red", },
+            { "name": "white", },
+            { "name": "blue", }
+          ]
+        },
+        {
+          "type": "logic_control",
+          "name": "goodbye",
+          "note": "",
+          "prompt": "Thanks! Enjoy the rest of Code Day.",
+          "options": []
+        }
+      ]
+    }
+  ]
+}
+
+client = FancyhandsClient(FANCYHANDS_KEY, FANCYHANDS_SECRET)
+request = client.outgoing_create(PHONE, json.dumps(CONVERSATION))
+key = request.get('key')
+
+print "Created Call Request: %s" % key
+```
 
