@@ -36,7 +36,7 @@ FANCYHANDS_KEY = "YOUR_FANCYHANDS_KEY"
 FANCYHANDS_SECRET = "YOUR_FANCYHANDS_SECRET"
 ```
 
-OK, not create a file called hello.py:
+OK, now create a file called hello.py:
 
 ```python
 from fancyhands import FancyhandsClient
