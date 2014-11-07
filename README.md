@@ -51,18 +51,34 @@ Now run it:
 
 You should a long version of this: `{u'oauth_nonce': u'59892137', ...  u'HELLO WORLD': u'GOODBYE'}`
 
-## Tell us what to do?
+Not seeing this? Let me know!
+
+## Tell us what to do
+
+Now that we know we can connect to the server, let's send a task to Fancy Hands.
+
+In this task, we'll use our `fancyhands.standard.Standard` endpoint to create a standard Fancy Hands Task.
 
 ```python
 from fancyhands import FancyhandsClient
 from datetime import timedelta, datetime
 from credentials import *
 
-TASK_TITLE = "What's the top story on the frontpage of reddit?"
-TASK_BODY = "Go to reddit.com, what's the title for the top headline on the frontpage?"
+TASK_TITLE = "What's the top story on the frontpage of Hacker News?"
+TASK_BODY = "Go to news.ycombinator.com, what's the title for the top headline on the frontpage?"
 TASK_BID = 2.0
 TASK_EXPIRE = datetime.utcnow() + timedelta(hours=1)
 
 client = FancyhandsClient(FANCYHANDS_KEY, FANCYHANDS_SECRET)
-print client.standard_create(TASK_TITLE, TASK_BODY, TASK_BID, TASK_EXPIRE, test=True)
+request = client.standard_create(TASK_TITLE, TASK_BODY, TASK_BID, TASK_EXPIRE, test=True)
+key = request.get('key')
+
+print "Created Request: %s" % key
 ```
+
+If you want to check the status and see the result:
+
+```python
+loaded = client.standard_get(key)
+```
+
