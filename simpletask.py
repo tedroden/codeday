@@ -1,4 +1,8 @@
-""" Tell Fancy Hands to do something """
+""" 
+Tell Fancy Hands to do something 
+
+Create a task using the standard API. 
+"""
 
 from fancyhands import FancyhandsClient
 from datetime import timedelta, datetime

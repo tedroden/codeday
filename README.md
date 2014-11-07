@@ -5,7 +5,7 @@
 
 The Fancy Hands python SDK lives on github at [github.com/fancyhands/fancyhands-python](https://github.com/fancyhands/fancyhands-python).
 
-You can install it with `pip`, but let's just [download it by hand](https://github.com/fancyhands/fancyhands-python/archive/master.zip): `http://bit.ly/fh-zip`
+You can install it with `pip`, but let's just [download it by hand](https://github.com/fancyhands/fancyhands-python/archive/master.zip): `[http://bit.ly/fh-zip](http://bit.ly/fh-zip)`
 
 Unzip and install it:
 
@@ -32,8 +32,8 @@ In this script, we'll create a super simple application. This is just a sanity c
 Create a file credentials.py:
 
 ```python
-FANCYHANDS_KEY = "YOUR_FANCY_HANDS_KEY"
-FANCYHANDS_SECRET = "YOUR_FANCY_HANDS_SECRET"
+FANCYHANDS_KEY = "YOUR_FANCYHANDS_KEY"
+FANCYHANDS_SECRET = "YOUR_FANCYHANDS_SECRET"
 ```
 
 OK, not create a file called hello.py:
@@ -81,4 +81,8 @@ If you want to check the status and see the result:
 ```python
 loaded = client.standard_get(key)
 ```
+
+## Call me, maybe?
+
+In this one, we'll have a real live human call us.
 
