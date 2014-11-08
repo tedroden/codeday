@@ -1,5 +1,6 @@
 # Fancy Hands Code Day
 
+[The Slides!](https://docs.google.com/presentation/d/1E_MXFHD-6kr24aED7E9AejPG2UaclxfEgdEhyIG7oY4/edit#slide=id.p)
 
 ## Install the Python SDK
 
